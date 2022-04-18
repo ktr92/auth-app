@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 h-screen">
-      <div class="w-96 max-w-full">
-        <the-navbar></the-navbar>
+    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-blue-500">
+      <the-navbar></the-navbar>
+      <div class="container mx-auto h-screen">
         <router-view></router-view>
       </div>
     </div>

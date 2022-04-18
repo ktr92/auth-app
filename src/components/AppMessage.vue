@@ -3,7 +3,7 @@
     v-if="message" 
     :class="{'text-red-400': typeError, 'text-green-600': typeInfo}"
   >
-    <p class="p-2 border rounded font-bolder">{{message.value}}</p>
+    <p class="p-2 border rounded font-bold">{{message.value}}</p>
   </div>
 </template>
 

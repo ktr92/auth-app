@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 left-0 flex items-center justify-center bg-gray-500 text-white w-full">
+  <div class="flex items-center justify-center bg-gray-500 text-white w-full">
     <ul class="list-none flex items-center justify-center">
       <li class="p-5 uppercase font-bold"><a @click.prevent="logout" class="cursor-pointer">Выход</a></li>
     </ul>
