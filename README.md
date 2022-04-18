@@ -1,19 +1,24 @@
-# auth-app
+Авторизация без бекенда (для "входа" нужно ввести непустой логин и любой пароль длиной не менее 8 символов).
+Без авторизации просмотр страницы профиля невозможен.
 
-## Project setup
-```
-npm install
-```
+#Routes 
+- "/" - главная страница с компонентом views/Login.vue
+- "/profile" - страница с профилем views/Profile.vue. Роут защищен и требует авторизации
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#Components
+- AppForm - форма авторизации, логика вынесена в use/login.js
+- AppMessage - уведомления о состоянии формы
+- AppUser - профиль пользователя
+- TheNavbar - хедер в навигацией
 
-### Compiles and minifies for production
-```
-npm run build
-```
+#Views
+- Login - содержимое страницы навигации
+- Profile - содержимое страницы профиля
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#Layouts 
+- AuthLayout.vue - для страницы авторизации
+- MainLayout.vue - для остальных страниц приложения. Показывается, только если пользователь авторизован
+
+#Store 
+- modules/auth.js - хранилище для работы с авторизацией
+- modules/messages.js - хранилище для работы с уведомлениями

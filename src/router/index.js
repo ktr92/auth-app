@@ -1,25 +1,47 @@
+import { vModelText } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-
+import store from '../store'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Login',
+    component: () => import('../views/Login.vue'),
+    meta: {
+      auth: false,
+      layout: 'auth'
+    }
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/Profile.vue'),
+    meta: {
+      auth: true,
+      layout: 'main'
+    }
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+// защита роутов
+router.beforeEach((to, from, next) => {
+  const isAuth = to.meta.auth
+
+  if (isAuth && store.getters['auth/isAuthenticated']) {
+    next()
+  } else if  (isAuth && !store.getters['auth/isAuthenticated']) {
+    next('/?message=auth')
+    store.dispatch('messages/setMessage', {
+      value: "Авторизуйтесь в системе",
+      type: "error"
+    })
+  } else {
+    next()
+  }
 })
 
 export default router
