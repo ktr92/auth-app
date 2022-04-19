@@ -14,7 +14,7 @@ export default {
 
     const store = useStore()
     const router = useRouter()
-
+    // при выходе из профиля
     const logout = () => {
       store.commit('auth/logout')
       store.dispatch('messages/setMessage', {

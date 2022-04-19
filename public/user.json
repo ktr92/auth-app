@@ -3,6 +3,6 @@
   "name":"User1",
   "email":"user@user.com",
   "phone":"+79998765432",
-  "avatar":"/assets/user.png",
+  "avatar":"user.png",
   "job":"developer"
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="px-8 pt-8 pb-16 rounded-lg bg-white shadow-lg">
+    <div class="px-8 pt-8 pb-16 m-2 md:m-0 md:mt-8 rounded-lg bg-white shadow-lg ">
       <app-form></app-form>
       <app-message></app-message>
     </div>

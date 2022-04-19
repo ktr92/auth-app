@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8">
+  <div class="m-2 md:m-0 md:mt-8">
     <app-user></app-user>
   </div>
 </template>
